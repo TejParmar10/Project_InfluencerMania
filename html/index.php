@@ -351,7 +351,7 @@ include 'header.php';
         </div>
 
         <div class="col-12 mt-4 text-center wow fadeInUp">
-          <a href="blog.html" class="btn btn-primary">View More</a>
+          <a href="blog.php" class="btn btn-primary">View More</a>
         </div>
       </div>
     </div>

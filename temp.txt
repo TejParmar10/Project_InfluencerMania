@@ -1,0 +1,36 @@
+<?php       
+                                    include 'connect.php';
+                                  $query = "select * from login ";
+                                  $query_run=mysqli_query($conn,$query);
+                                  $check_influencer=mysqli_num_rows($query_run)>0;
+                                  if($check_influencer)
+                                  {
+                                      while($row=mysqli_fetch_assoc($query_run)){
+             ?> 
+             <div class="row">
+                                    <div class="col-lg-4 col-md-12 mb-4">
+                                          <!-- Code  to display all my influencers -->
+                                          <div class="card-blog">
+                                                <div class="header">
+                                                          <div class="post-thumb">
+                                                          <img src="../assets/img/blog/blog-1.jpg" alt="">
+                                                          </div>
+                                                      </div>
+                                                  <div class="body">
+                                                        <h5 class="post-title"><a href="blog-details.html"><?php echo $_SESSION['username']?></a></h5>
+                                                        <div class="post-date">Posted on <a href="#"><?php echo $_SESSION['category']?></a></div>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                      </div>
+              </div>
+                              <?php
+                                      }
+                                  }
+                                  else{
+                                    echo 'no results';
+
+                                  }
+                                ?>
+        </div> 
+                                </div>

@@ -18,9 +18,11 @@ $pass=$_POST['password'];
       $count = mysqli_num_rows($result);
       if($count == 1) {
          
+        $_SESSION['isloggedin']=true;
          $_SESSION['id']=$row['influencer_id'];
          $_SESSION['username']=$row['Name'];
          $_SESSION['category']=$row['category'];
+         
          header("location: index.php");
       }else{
     $message = 'Wrong Email or Password';

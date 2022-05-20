@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +32,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
       <div class="container">
-        <a href="#" class="navbar-brand">Influencer<span class="text-primary">Mania.</span></a>
+        <a href="index.php" class="navbar-brand">Influencer<span class="text-primary">Mania.</span></a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,9 +42,6 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="influencer_profile.php">Influencers</a>
@@ -56,12 +56,47 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <div class="dropdown">
-                    <a href="#" class="dropbtn">Signin</a>
-                    <div class="dropdown-content">
-                        <a href="login_signup_influencer.html">Influencer</a>
-                        <a href="login_signup_brand.html">Brand</a>
-                    </div>
+            <?php 
+            if(isset($_SESSION['isloggedin'])&&($_SESSION['isloggedin']==false)){
+                ?>
+            <li class="nav-item">
+                            <div class="dropdown">
+                                    <a href="#" class="dropbtn">Signin</a>
+                                    <div class="dropdown-content">
+                                        <a href="login_signup_influencer.html">Influencer</a>
+                                        <a href="login_signup_brand.html">Brand</a>
+                                    </div>
+                            </div>  
+            </li>
+            <?php
+            }
+            else
+            {
+            ?>
+            <li>      
+                                <a href="#">Welcome:
+                                <?php
+                                try {
+                                    error_reporting(E_ERROR | E_PARSE);
+                                    if($_SESSION['id']!=null){
+                                        echo $_SESSION['username']; 
+                                    }
+                                } catch (\Throwable $th) {
+                                    echo 'erro';
+                                }
+                               
+                               ?>
+                                </a>
+                                
+                            </li>
+            <li class="nav-items">
+                <a class="nav-link" href="logout.php">Logout
+                </a>
+        </li>
+        <?php
+            }
+            
+            ?>
           </ul>
         </div>
         </div>
