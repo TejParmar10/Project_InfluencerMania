@@ -41,10 +41,20 @@
               <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="influencer_profile.php">Influencers</a>
+            </li>
+            <!-- <div class="dropdown">
+                    <a href="#" class="dropbtn">Signin</a>
+                    <div class="dropdown-content">
+                        <a href="login_signup_influencer.html">Influencer</a>
+                        <a href="login_signup_brand.html">Brand</a>
+                    </div> -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
             <div class="dropdown">
                     <a href="#" class="dropbtn">Signin</a>
@@ -52,15 +62,8 @@
                         <a href="login_signup_influencer.html">Influencer</a>
                         <a href="login_signup_brand.html">Brand</a>
                     </div>
-</div>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-primary ml-lg-2" href="#">Free Analytics</a>
-            </li>
           </ul>
         </div>
-
+        </div>
       </div>
     </nav>

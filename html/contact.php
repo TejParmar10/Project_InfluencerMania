@@ -49,9 +49,9 @@
             <li class="nav-item active">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="btn btn-primary ml-lg-2" href="#">Free Analytics</a>
-            </li>
+            </li> -->
           </ul>
         </div>
 

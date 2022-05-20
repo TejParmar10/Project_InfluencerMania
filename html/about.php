@@ -49,9 +49,9 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="btn btn-primary ml-lg-2" href="#">Free Analytics</a>
-            </li>
+            </li> -->
           </ul>
         </div>
 
@@ -95,7 +95,7 @@
     </div>
   </div>
 
-  <div class="page-section">
+  <!-- <div class="page-section">
     <div class="container">
       <div class="text-center">
         <div class="subhead">Pricing Plan</div>
@@ -170,13 +170,13 @@
               <a href="#" class="btn btn-pricing btn-block">Subscribe</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div> <!-- .container -->
   </div> <!-- .page-section -->
 
-  <footer class="page-footer bg-image" style="background-image: url(../assets/img/world_pattern.svg);">
+  <!-- <footer class="page-footer bg-image" style="background-image: url(../assets/img/world_pattern.svg);">
     <div class="container">
       <div class="row mb-5">
         <div class="col-lg-3 py-3">
@@ -219,7 +219,10 @@
 
       <p class="text-center" id="copyright">Copyright &copy; 2020. This template design and develop by <a href="https://macodeid.com/" target="_blank">MACode ID</a></p>
     </div>
-  </footer>
+  </footer> -->
+  <?php
+include 'footer.php';
+?>
 
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
 

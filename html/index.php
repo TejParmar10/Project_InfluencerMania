@@ -170,7 +170,7 @@ include 'header.php';
     </div> <!-- .container -->
   </div> <!-- .page-section -->
 
-  <div class="page-section banner-seo-check">
+  <!-- <div class="page-section banner-seo-check">
     <div class="wrap bg-image" style="background-image: url(../assets/img/bg_pattern.svg);">
       <div class="container text-center">
         <div class="row justify-content-center wow fadeInUp">
@@ -181,12 +181,12 @@ include 'header.php';
               <button type="submit" class="btn btn-success">Check Now</button>
             </form>
           </div>
-        </div>
+        </div> -->
       </div> <!-- .container -->
     </div> <!-- .wrap -->
   </div> <!-- .page-section -->
 
-  <div class="page-section">
+  <!-- <div class="page-section">
     <div class="container">
       <div class="text-center wow fadeInUp">
         <div class="subhead">Pricing Plan</div>
@@ -238,9 +238,9 @@ include 'header.php';
               <a href="#" class="btn btn-pricing btn-block">Subscribe</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="col-lg-4 py-3 wow zoomIn">
+        <!-- <div class="col-lg-4 py-3 wow zoomIn">
           <div class="card-pricing">
             <div class="header">
               <div class="pricing-type">Professional</div>
@@ -263,12 +263,12 @@ include 'header.php';
           </div>
         </div>
 
-      </div>
+      </div> -->
     </div> <!-- .container -->
   </div> <!-- .page-section -->
 
   <!-- Banner info -->
-  <div class="page-section banner-info">
+  <!-- <div class="page-section banner-info">
     <div class="wrap bg-image" style="background-image: url(../assets/img/bg_pattern.svg);">
       <div class="container">
         <div class="row align-items-center">
@@ -294,7 +294,7 @@ include 'header.php';
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div> <!-- .wrap -->
   </div> <!-- .page-section -->
 
