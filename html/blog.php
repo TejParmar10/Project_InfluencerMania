@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include 'header.php';
 ?>
     <div class="container">
@@ -54,22 +54,24 @@ include 'header.php';
                                       while($row=mysqli_fetch_assoc($query_run)){
                             ?>
                           <div class="col-md-4 mt-2">      
-                                      <figure class="snip0045 red">
-                                                    <figcaption>
                                                     <div class="card-blog">
-                                                <div class="header">
-                                                          <div class="post-thumb">
-                                                          <img src="../assets/img/blog/blog-1.jpg" alt="">
-                                                          </div>
+                                                                <div class="header">
+                                                                    <div class="post-thumb">
+                                                                        <img src="../assets/img/blog/blog-1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="body">
+                                                                    <h5 class="post-title"><a href="blog-details.html"><?php echo $row['Name']?></a></h5>
+                                                                    <div class="post-date">Posted on 
+                                                                        <a href="#">
+                                                                          <?php echo $row['category']?>
+                                                                      </a>
+                                                                    </div>
+                                                                </div>
                                                       </div>
-                                                  <div class="body">
-                                                        <h5 class="post-title"><a href="blog-details.html"><?php echo $row['Name']?></a></h5>
-                                                        <div class="post-date">Posted on <a href="#"><?php echo $row['category']?></a></div>
-                                                  </div>
-                                                </div>
-                                            </div>
-                                        </figure>
                             </div>
+                </div>
+                                      </div>
                                       <?php
                                       }
                                   }
@@ -78,8 +80,6 @@ include 'header.php';
 
                                   }
                                       ?>
-                    </div>
-            </div>  
         <!-- <div class="col-lg-4 py-3">
           <div class="card-blog">
             <div class="header">

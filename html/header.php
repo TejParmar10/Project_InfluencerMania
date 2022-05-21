@@ -57,7 +57,7 @@ session_start();
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
             <?php 
-            if(isset($_SESSION['isloggedin'])&&($_SESSION['isloggedin']==false)){
+            if($_SESSION['isloggedin']==false){
                 ?>
             <li class="nav-item">
                             <div class="dropdown">
