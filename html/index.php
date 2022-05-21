@@ -68,8 +68,12 @@ include 'header.php';
           <h2 class="title-section">The number #1 Influencer Marketing Website</h2>
           <div class="divider"></div>
 
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-          <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+          <h5>100% Transparency</h5>
+          <p>Being transparent is something we take pride in. You have the influencer rates upfront. You get what you see, and you pay what you see..</p>
+          <h5>Data-backed Recommendations.</h5>
+          <p>You get influencers recommended based on relevant performance data. They're all in for fresh concept and content in their influential categories.</p>
+          <h5>Network of 10,000+ influencers</h5>
+          <p>Be it beauty, lifestyle or sports niche influencers, we have them. Tech, gaming and finance too. Have the need for other creators?</p>
           <a href="about.html" class="btn btn-primary mt-3">Read More</a>
         </div>
         <div class="col-lg-6 py-3 wow fadeInRight">
