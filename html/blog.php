@@ -34,7 +34,7 @@ include 'header.php';
                   <option value="Food">Food</option>
                 </select>
               </div>
-              <input type="text" class="form-control" placeholder="Enter keyword..">
+              <input type="text" class="form-control" placeholder="">
             </div>
           </form>
         </div>
