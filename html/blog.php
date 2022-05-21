@@ -43,43 +43,34 @@ include 'header.php';
         </div>
       </div>
       <div class="container py-5">
-              <div class="row mt-8">
-                          <?php       
-                                    include 'connect.php';
-                                  $query = "select * from login ";
-                                  $query_run=mysqli_query($conn,$query);
-                                  $check_influencer=mysqli_num_rows($query_run)>0;
-                                  if($check_influencer)
-                                  {
-                                      while($row=mysqli_fetch_assoc($query_run)){
-                            ?>
-                          <div class="col-md-4 mt-2">      
-                                                    <div class="card-blog">
-                                                                <div class="header">
-                                                                    <div class="post-thumb">
-                                                                        <img src="../assets/img/blog/blog-1.jpg" alt="">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="body">
-                                                                    <h5 class="post-title"><a href="blog-details.html"><?php echo $row['Name']?></a></h5>
-                                                                    <div class="post-date">Posted on 
-                                                                        <a href="#">
-                                                                          <?php echo $row['category']?>
-                                                                      </a>
-                                                                    </div>
-                                                                </div>
-                                                      </div>
-                            </div>
-                </div>
-                                      </div>
-                                      <?php
-                                      }
-                                  }
-                                  else{
-                                    echo 'no results';
-
-                                  }
-                                      ?>
+      <div class="row mt-5">
+        <?php
+        include 'connect.php';
+        $query = "select * from login LIMIT 12";
+        $query_run=mysqli_query($conn,$query);
+        $check_influencer=mysqli_num_rows($query_run)>0;
+        if($check_influencer)
+        {
+            while($row=mysqli_fetch_assoc($query_run)){
+        ?>
+        <div class="col-lg-4 py-3 wow fadeInUp">
+          <div class="card-blog">
+            <div class="header">
+              <div class="post-thumb">
+                <img src="../assets/img/blog/blog-1.jpg" alt="">
+              </div>
+            </div>
+            <div class="body">
+              <h5 class="post-title"><a href="#"><?php echo $row['Name']?></a></h5>
+              <div class="post-date"><a href="#"><?php echo $row['category']?></a></div>
+            </div>
+          </div>
+        </div>
+        <?php
+            }
+          }
+          ?>
+      </div>
         <!-- <div class="col-lg-4 py-3">
           <div class="card-blog">
             <div class="header">
