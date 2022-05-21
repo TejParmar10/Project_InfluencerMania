@@ -25,7 +25,7 @@ include 'header.php';
           <h2 class="title-section">The number #1 Influencer Marketing Website</h2>
           <div class="divider"></div>
 
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+          <p>We help you explore and discover the influencers who fit the best. You get all the metrics you need to compare, connect and contact. Do we need to say any more?</p>
           <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nisi saepe eum ipsa. Tempore dolore itaque est blanditiis libero fugiat, ea nostrum nam at tempora quis, facilis officiis nemo mollitia.</p>
         </div>

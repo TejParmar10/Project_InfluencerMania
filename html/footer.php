@@ -3,7 +3,7 @@
       <div class="row mb-5">
         <div class="col-lg-3 py-3">
           <h3>InfluencerMania</h3>
-          <p>InfluencerMania helps you to connect with best Influencer.</p>
+          <p>We Connect Innovative Brands with Influencers & Content Creators around the world.</p>
 
           <div class="social-media-button">
             <a href="#"><span class="mai-logo-facebook-f"></span></a>
