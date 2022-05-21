@@ -78,7 +78,7 @@ include 'header.php';
         </div>
         <div class="col-lg-6 py-3 wow fadeInRight">
           <div class="img-fluid py-3 text-center">
-            <img src="../assets/img/about_frame.png" alt="">
+            <img src="../assets/img/home2.png" alt="" width="450px">
           </div>
         </div>
       </div>
