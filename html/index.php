@@ -318,8 +318,16 @@ include 'header.php';
         <h2 class="title-section"></h2>
         <div class="divider mx-auto"></div>
       </div>
-
       <div class="row mt-5">
+        <?php
+        include 'connect.php';
+        $query = "select * from login LIMIT 3";
+        $query_run=mysqli_query($conn,$query);
+        $check_influencer=mysqli_num_rows($query_run)>0;
+        if($check_influencer)
+        {
+            while($row=mysqli_fetch_assoc($query_run)){
+        ?>
         <div class="col-lg-4 py-3 wow fadeInUp">
           <div class="card-blog">
             <div class="header">
@@ -328,13 +336,17 @@ include 'header.php';
               </div>
             </div>
             <div class="body">
-              <h5 class="post-title"><a href="#">Source of Content Inspiration</a></h5>
-              <div class="post-date">Posted on <a href="#">27 Jan 2020</a></div>
+              <h5 class="post-title"><a href="#"><?php echo $row['Name']?></a></h5>
+              <div class="post-date"><a href="#"><?php echo $row['category']?></a></div>
             </div>
           </div>
         </div>
-        
-        <div class="col-lg-4 py-3 wow fadeInUp">
+        <?php
+            }
+          }
+          ?>
+      </div>
+        <!-- <div class="col-lg-4 py-3 wow fadeInUp">
           <div class="card-blog">
             <div class="header">
               <div class="post-thumb">
@@ -359,8 +371,7 @@ include 'header.php';
               <h5 class="post-title"><a href="#">Source of Content Inspiration</a></h5>
               <div class="post-date">Posted on <a href="#">27 Jan 2020</a></div>
             </div>
-          </div>
-        </div>
+          </div> -->
 
         <div class="col-12 mt-4 text-center wow fadeInUp">
           <a href="blog.php" class="btn btn-primary">View More</a>
