@@ -32,7 +32,7 @@ session_start();
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
       <div class="container">
-        <a href="index.php" class="navbar-brand">Influencer<span class="text-primary">Mania.</span></a>
+        <a href="index.php" class="navbar-brand">Influencer<span class="text-primary">Mania</span></a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

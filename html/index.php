@@ -88,18 +88,30 @@ include 'header.php';
         <h2 class="title-section">Our Clients</h2>
         <div class="divider mx-auto"></div>
       </div>
-
         <div class="row">
+          <?php
+             include 'connect.php';
+             $query = "select Name from brand_login";
+             $query_run=mysqli_query($conn,$query);
+             $check_influencer=mysqli_num_rows($query_run)>0;
+             if($check_influencer)
+             {
+                 while($row=mysqli_fetch_assoc($query_run)){
+          ?>
           <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
             <div class="features">
               <div class="header mb-3">
                 <span class="mai-business"></span>
               </div>
-              <h5>OnePlus</h5>
-              
+              <h5><?php echo $row['Name']?></h5>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
+          <?php
+            }
+        }
+                ?>
+        </div>
+          <!-- <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
             <div class="features">
               <div class="header mb-3">
                 <span class="mai-business"></span>
@@ -157,13 +169,11 @@ include 'header.php';
             <div class="features">
               <div class="header mb-3">
                 <span class="mai-business"></span>
-                <!-- <img src=""> -->
               </div>
-              <h5>Hp</h5>
-              
+              <h5>Hp</h5>              
             </div>
           </div>
-        </div>
+        </div> -->
 
     </div> <!-- .container -->
   </div> <!-- .page-section -->
