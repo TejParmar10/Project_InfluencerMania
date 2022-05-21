@@ -26,8 +26,12 @@ include 'header.php';
           <div class="divider"></div>
 
           <p>We help you explore and discover the influencers who fit the best. You get all the metrics you need to compare, connect and contact. Do we need to say any more?</p>
-          <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nisi saepe eum ipsa. Tempore dolore itaque est blanditiis libero fugiat, ea nostrum nam at tempora quis, facilis officiis nemo mollitia.</p>
+          <h4>100% Transparency</h4>
+          <p>Being transparent is something we take pride in. You have the influencer rates upfront. You get what you see, and you pay what you see..</p>
+          <h4>Data-backed Recommendations.</h4>
+          <p>You get influencers recommended based on relevant performance data. They're all in for fresh concept and content in their influential categories.</p>
+          <h4>Network of 10,000+ influencers</h4>
+          <p>Be it beauty, lifestyle or sports niche influencers, we have them. Tech, gaming and finance too. Have the need for other creators?</p>
         </div>
         <div class="col-lg-6 py-3">
           <div class="img-fluid py-3 text-center">
