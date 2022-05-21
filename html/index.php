@@ -29,9 +29,8 @@ include 'header.php';
               <img src="../assets/img/services/service-1.svg" alt="">
             </div>
             <div class="body">
-              <h5 class="text-secondary">SEO Consultancy</h5>
-              <p>We help you define your SEO objective & develop a realistic strategy with you</p>
-              <a href="service.html" class="btn btn-primary">Read More</a>
+              <h5 class="text-secondary">Get Paid to Do What You Love</h5>
+              <p>Profit from your passions by collaborating on stories that are closely aligned with your interests.</p>
             </div>
           </div>
         </div>
@@ -41,9 +40,8 @@ include 'header.php';
               <img src="../assets/img/services/service-2.svg" alt="">
             </div>
             <div class="body">
-              <h5 class="text-secondary">Content Marketing</h5>
+              <h5 class="text-secondary">Develop Relationships with Brands</h5>
               <p>We help you define your SEO objective & develop a realistic strategy with you</p>
-              <a href="service.html" class="btn btn-primary">Read More</a>
             </div>
           </div>
         </div>
@@ -53,9 +51,8 @@ include 'header.php';
               <img src="../assets/img/services/service-3.svg" alt="">
             </div>
             <div class="body">
-              <h5 class="text-secondary">Keyword Research</h5>
-              <p>We help you define your SEO objective & develop a realistic strategy with you</p>
-              <a href="service.html" class="btn btn-primary">Read More</a>
+              <h5 class="text-secondary">View Your Performance</h5>
+              <p>Easily follow your stats and performance results on all your social media channels.Register with InfluencerMania to get started.</p>
             </div>
           </div>
         </div>
