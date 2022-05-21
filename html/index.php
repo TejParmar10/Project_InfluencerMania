@@ -68,7 +68,7 @@ include 'header.php';
       <div class="row align-items-center">
         <div class="col-lg-6 py-3 wow fadeInUp">
           <span class="subhead">About us</span>
-          <h2 class="title-section">The number #1 SEO Service Company</h2>
+          <h2 class="title-section">The number #1 Influencer Marketing Website</h2>
           <div class="divider"></div>
 
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
@@ -87,8 +87,8 @@ include 'header.php';
   <div class="page-section bg-light">
     <div class="container">
       <div class="text-center wow fadeInUp">
-        <div class="subhead">Our services</div>
-        <h2 class="title-section">How SEO Team Can Help</h2>
+        <div class="subhead"></div>
+        <h2 class="title-section">Our Clients</h2>
         <div class="divider mx-auto"></div>
       </div>
 
@@ -98,8 +98,8 @@ include 'header.php';
               <div class="header mb-3">
                 <span class="mai-business"></span>
               </div>
-              <h5>OnSite SEO</h5>
-              <p>We analyse your website's structure, internal architecture & other key</p>
+              <h5>OnePlus</h5>
+              
             </div>
           </div>
           <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
@@ -107,8 +107,8 @@ include 'header.php';
               <div class="header mb-3">
                 <span class="mai-business"></span>
               </div>
-              <h5>OnSite SEO</h5>
-              <p>We analyse your website's structure, internal architecture & other key</p>
+              <h5>Micromax</h5>
+              
             </div>
           </div>
           <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
@@ -116,8 +116,8 @@ include 'header.php';
               <div class="header mb-3">
                 <span class="mai-business"></span>
               </div>
-              <h5>OnSite SEO</h5>
-              <p>We analyse your website's structure, internal architecture & other key</p>
+              <h5>Lenevo</h5>
+              
             </div>
           </div>
           <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
@@ -125,8 +125,8 @@ include 'header.php';
               <div class="header mb-3">
                 <span class="mai-business"></span>
               </div>
-              <h5>OnSite SEO</h5>
-              <p>We analyse your website's structure, internal architecture & other key</p>
+              <h5>KingFisher</h5>
+              
             </div>
           </div>
           <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
@@ -134,8 +134,8 @@ include 'header.php';
               <div class="header mb-3">
                 <span class="mai-business"></span>
               </div>
-              <h5>OnSite SEO</h5>
-              <p>We analyse your website's structure, internal architecture & other key</p>
+              <h5>Audi</h5>
+              
             </div>
           </div>
           <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
@@ -143,8 +143,8 @@ include 'header.php';
               <div class="header mb-3">
                 <span class="mai-business"></span>
               </div>
-              <h5>OnSite SEO</h5>
-              <p>We analyse your website's structure, internal architecture & other key</p>
+              <h5>Philips</h5>
+              
             </div>
           </div>
           <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
@@ -152,17 +152,18 @@ include 'header.php';
               <div class="header mb-3">
                 <span class="mai-business"></span>
               </div>
-              <h5>OnSite SEO</h5>
-              <p>We analyse your website's structure, internal architecture & other key</p>
+              <h5>Honda</h5>
+              
             </div>
           </div>
           <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
             <div class="features">
               <div class="header mb-3">
                 <span class="mai-business"></span>
+                <!-- <img src=""> -->
               </div>
-              <h5>OnSite SEO</h5>
-              <p>We analyse your website's structure, internal architecture & other key</p>
+              <h5>Hp</h5>
+              
             </div>
           </div>
         </div>
@@ -302,8 +303,8 @@ include 'header.php';
   <div class="page-section">
     <div class="container">
       <div class="text-center wow fadeInUp">
-        <div class="subhead">Our Blog</div>
-        <h2 class="title-section">Read Latest News</h2>
+        <div class="subhead">Influencer</div>
+        <h2 class="title-section"></h2>
         <div class="divider mx-auto"></div>
       </div>
 

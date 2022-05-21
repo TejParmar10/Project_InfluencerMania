@@ -2,8 +2,8 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-lg-3 py-3">
-          <h3>SEOGram</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero amet, repellendus eius blanditiis in iusto eligendi iure.</p>
+          <h3>InfluencerMania</h3>
+          <p>InfluencerMania helps you to connect with best Influencer.</p>
 
           <div class="social-media-button">
             <a href="#"><span class="mai-logo-facebook-f"></span></a>
@@ -25,9 +25,9 @@
         </div>
         <div class="col-lg-3 py-3">
           <h5>Contact Us</h5>
-          <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
+          <p>Bhagubhai , Ville Parle, Mumbai, Maharashtra, India</p>
           <a href="#" class="footer-link">+00 1122 3344 5566</a>
-          <a href="#" class="footer-link">seogram@temporary.com</a>
+          <a href="#" class="footer-link">influencermania.com</a>
         </div>
         <div class="col-lg-3 py-3">
           <h5>Newsletter</h5>
@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <p class="text-center" id="copyright">Copyright &copy; 2020. This template design and develop by <a href="https://macodeid.com/" target="_blank">MACode ID</a></p>
+      <p class="text-center" id="copyright">Website Created By InfluencerMania Team <a href="https://macodeid.com/" target="_blank"></a></p>
     </div>
   </footer>
 
