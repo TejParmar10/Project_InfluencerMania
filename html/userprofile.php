@@ -1,3 +1,16 @@
+<?php 
+ include 'connect.php';
+ if(isset($_GET['id'])){
+  $id=mysqli_real_escape_string($conn,$_GET['id']);
+  $sql="select * from login where influencer_id=$id";
+  $result=mysqli_query($conn,$sql);
+  $row=mysqli_fetch_assoc($result);
+  mysqli_free_result($result);
+  mysqli_close($conn);
+ }?>
+ <?php
+include 'header.php'; 
+?>
 <style>
    body{
     margin-top:20px;
@@ -53,18 +66,14 @@
     box-shadow: none!important;
 } 
     </style>
-<?php
-    include 'header.php';
-?>
-
 <div class="container">
     <div class="main-body">
     
           <!-- Breadcrumb -->
           <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+              <li class="breadcrumb-item"><a href="influencers.php">Influencers</a></li>
               <li class="breadcrumb-item active" aria-current="page">User Profile</li>
             </ol>
           </nav>
@@ -75,11 +84,10 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                  <?php echo '<center><img src="data:image/jpg;base64,'.base64_encode( $row['influencer_image'] ).'"alt="influencers image" style="width:300px; height:300px;">';?>
                     <div class="mt-3">
-                      <h4>John Doe</h4>
-                      <p class="text-secondary mb-1">Full Stack Developer</p>
-                      <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                      <h4><?php echo $row['Name'];?></h4>
+                      <p class="text-secondary mb-1"><?php echo $row['category'];?></p>
                       <button class="btn btn-primary">Follow</button>
                       <button class="btn btn-outline-primary">Message</button>
                     </div>
@@ -119,7 +127,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      <?php echo $row['Name'];?>
                     </div>
                   </div>
                   <hr>
@@ -128,7 +136,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      fip@jukmuh.al
+                  <?php echo $row['email'];?>
                     </div>
                   </div>
                   <hr>
@@ -137,28 +145,11 @@
                       <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (239) 816-9029
+                     <?php echo $row['Phone'];?>
                     </div>
                   </div>
                   <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      (320) 380-4539
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Address</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
-                    </div>
-                  </div>
-                  <hr>
+                  
                   <div class="row">
                     <div class="col-sm-12">
                       <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>

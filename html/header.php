@@ -47,7 +47,7 @@ session_start();
               <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.php">Influencers</a>
+              <a class="nav-link" href="influencers.php">Influencers</a>
             </li>
             <!-- <div class="dropdown">
                     <a href="#" class="dropbtn">Signin</a>
