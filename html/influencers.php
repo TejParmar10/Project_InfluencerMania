@@ -34,7 +34,8 @@ include 'header.php';
                   <option value="Food">Food</option>
                 </select>
               </div>
-              <input type="text" class="form-control" placeholder="">
+              <input type="text" class="form-control" placeholder="Enter the name of the influencer">
+              <button type="submit" name="save" class="btn btn-primary">Search</button>
             </div>
           </form>
         </div>
@@ -46,9 +47,19 @@ include 'header.php';
       <div class="row mt-5">
         <?php
         include 'connect.php';
+        $results_per_page=9;
         $query = "select * from login LIMIT 12";
         $query_run=mysqli_query($conn,$query);
         $check_influencer=mysqli_num_rows($query_run)>0;
+        $number_of_result=mysqli_num_rows($query_run);
+        $number_of_page=ceil($number_of_result/$results_per_page);
+        if(isset($_GET['page'])){
+          $page=1;
+        }
+        else{
+          $page=$_GET['page'];
+        }
+        $page_first_result=($page-1)*$results_per_page;
         if($check_influencer)
         {
             while($row=mysqli_fetch_assoc($query_run)){
@@ -61,7 +72,7 @@ include 'header.php';
               </div>
             </div>
             <div class="body">
-              <h5 class="post-title"><a href="userprofile.php?id=<?php echo $row['influencer_id']?>" ><?php echo $row['Name']?></a></h5>
+              <h5 class="post-title"><a href="userprofile.phpid=<?php echo $row['influencer_id']?>" ><?php echo $row['Name']?></a></h5>
               <div class="post-date"><a href="#"><?php echo $row['category']?></a></div>
             </div>
           </div>

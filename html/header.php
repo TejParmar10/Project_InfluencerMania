@@ -59,6 +59,9 @@ session_start();
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="selected_influencer_profile.php?id=<?php echo $_SESSION['id']?>">My Profile</a>
+            </li>
             <?php 
             if($_SESSION['isloggedin']==false){
                 ?>
