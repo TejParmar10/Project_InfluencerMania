@@ -34,21 +34,44 @@ include 'header.php';
                   <option value="Food">Food</option>
                 </select>
               </div>
-              <input type="text" class="form-control" placeholder="Enter the name of the influencer">
+              <!-- <input type="text" class="form-control" placeholder="Enter the name of the influencer"> -->
               <button type="submit" name="save" class="btn btn-primary">Search</button>
             </div>
           </form>
         </div>
-        <div class="col-sm-2 text-sm-right">
+        <!-- <div class="col-sm-2 text-sm-right">
           <button class="btn btn-secondary">Filter <span class="mai-filter"></span></button>
-        </div>
+        </div> -->
       </div>
       <div class="container py-5">
       <div class="row mt-5">
         <?php
         include 'connect.php';
         $results_per_page=9;
-        $query = "select * from login LIMIT 12";
+        $cat1="Clothing";
+        $cat2="Grooming";
+        $cat3="Tech";
+        $cat4="Food";
+        if($value==$cat1)
+        {
+          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+        }
+        else if($value ==$cat2)
+        {
+          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+        }
+        else if($value==$cat3)
+        {
+          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+        }
+        else if($value==$cat4)
+        {
+          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+        }
+        else
+        {
+          $query = "select * from login LIMIT 12";
+        }
         $query_run=mysqli_query($conn,$query);
         $check_influencer=mysqli_num_rows($query_run)>0;
         $number_of_result=mysqli_num_rows($query_run);

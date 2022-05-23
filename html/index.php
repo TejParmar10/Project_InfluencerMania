@@ -1,3 +1,12 @@
+
+<?php
+include 'connect.php';
+$sql="select * from brand_login";
+$result=mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($result);
+mysqli_free_result($result);
+mysqli_close($conn);
+?>
 <?php
 include 'header.php';
 ?>
@@ -95,7 +104,7 @@ include 'header.php';
         <div class="row">
           <?php
              include 'connect.php';
-             $query = "select Name from brand_login";
+             $query = "select * from brand_login";
              $query_run=mysqli_query($conn,$query);
              $check_influencer=mysqli_num_rows($query_run)>0;
              if($check_influencer)
@@ -105,8 +114,11 @@ include 'header.php';
           <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
             <div class="features">
               <div class="header mb-3">
-                <span class="mai-business"></span>
+              <?php echo '<center><img src="data:image/jpg;base64,'.base64_encode( $row['brand_logo'] ).'"alt="brand loho" style="width:100px; height:100px;">';?>
               </div>
+              <br>
+              <br>
+              <br>
               <h5><?php echo $row['Name']?></h5>
             </div>
           </div>
