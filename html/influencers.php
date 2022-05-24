@@ -95,7 +95,7 @@ include 'header.php';
               </div>
             </div>
             <div class="body">
-              <h5 class="post-title"><a href="userprofile.phpid=<?php echo $row['influencer_id']?>" ><?php echo $row['Name']?></a></h5>
+              <h5 class="post-title"><a href="userprofile.php?id=<?php echo $row['influencer_id']?>" ><?php echo $row['Name']?></a></h5>
               <div class="post-date"><a href="#"><?php echo $row['category']?></a></div>
             </div>
           </div>
