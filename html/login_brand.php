@@ -18,7 +18,10 @@ $pass=$_POST['password'];
       $count = mysqli_num_rows($result);
       if($count == 1) {
          
-         $_SESSION['id']=$row['id'];
+        $_SESSION['isBrandlogin']=true; 
+        // $_SESSION['isloggedin']=true;
+        $_SESSION['brand_username']=$row['Name'];
+        $_SESSION['selected_brand_id']=$row['brand_id'];
         //  $_SESSION['username_brand']=$row['name'];
          header("location: index.php");
       }else{

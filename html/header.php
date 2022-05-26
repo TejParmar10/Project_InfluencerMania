@@ -46,24 +46,49 @@ session_start();
             <li class="nav-item">
               <a class="nav-link" href="index.php">Home</a>
             </li>
+            <?php
+            if($_SESSION['isInfluencerlogin']==true)
+            {
+            ?>
             <li class="nav-item">
+              <a class="nav-link" href="brands.php">Brands</a>
+            </li>
+            <?php
+            }
+            else{
+              ?>
+              <li class="nav-item">
               <a class="nav-link" href="influencers.php">Influencers</a>
             </li>
+            <?php
+            }
+            ?>
             <!-- <div class="dropdown">
                     <a href="#" class="dropbtn">Signin</a>
                     <div class="dropdown-content">
                         <a href="login_signup_influencer.html">Influencer</a>
                         <a href="login_signup_brand.html">Brand</a>
                     </div> -->
-
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
+            <?php
+            if($_SESSION['isInfluencerlogin']==true)
+            {
+            ?>
             <li class="nav-item">
               <a class="nav-link" href="selected_influencer_profile.php?id=<?php echo $_SESSION['id']?>">My Profile</a>
             </li>
+            <?php
+            }
+            else
+            {
+              ?>
+             <li class="nav-item">
+              <a class="nav-link" href="selected_brand_profile.php?id=<?php echo $_SESSION['selected_brand_id']?>">My Profile</a>
+            </li>
+            <?php
+            }
+            ?>
             <?php 
-            if($_SESSION['isloggedin']==false){
+            if($_SESSION['isInfluencerlogin']==false && $_SESSION['isBrandlogin']==false){
                 ?>
             <li class="nav-item">
                             <div class="dropdown">
@@ -76,7 +101,7 @@ session_start();
             </li>
             <?php
             }
-            else
+            else if($_SESSION['isInfluencerlogin']==true)
             {
             ?>
             <li>      
@@ -96,12 +121,36 @@ session_start();
                                 
                             </li>
             <li class="nav-items">
-                <a class="nav-link" href="logout.php">Logout
+                <a class="nav-link" href="logout_influencer.php">Logout
                 </a>
         </li>
         <?php
             }
-            
+            else if($_SESSION['isBrandlogin']==true)
+            {
+            ?>
+            <li>      
+                                <a href="#">Welcome:
+                                <?php
+                                try {
+                                    error_reporting(E_ERROR | E_PARSE);
+                                    if($_SESSION['selected_brand_id']!=null){
+                                        echo $_SESSION['brand_username']; 
+                                    }
+                                } catch (\Throwable $th) {
+                                    echo 'erro';
+                                }
+                               
+                               ?>
+                                </a>
+                                
+                            </li>
+            <li class="nav-items">
+                <a class="nav-link" href="logout_brand.php">Logout
+                </a>
+            </li>
+          <?php
+            }
             ?>
           </ul>
         </div>

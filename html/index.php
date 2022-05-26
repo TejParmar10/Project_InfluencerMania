@@ -87,7 +87,7 @@ include 'header.php';
         </div>
         <div class="col-lg-6 py-3 wow fadeInRight">
           <div class="img-fluid py-3 text-center">
-            <img src="../assets/img/home2.png" alt="" width="450px">
+            <img src="../assets/img/home2.png" alt="about image" width="450px">
           </div>
         </div>
       </div>
@@ -104,17 +104,17 @@ include 'header.php';
         <div class="row">
           <?php
              include 'connect.php';
-             $query = "select * from brand_login";
+             $query = "select * from brand_login LIMIT 12";
              $query_run=mysqli_query($conn,$query);
-             $check_influencer=mysqli_num_rows($query_run)>0;
-             if($check_influencer)
+             $check_brand=mysqli_num_rows($query_run)>0;
+             if($check_brand)
              {
                  while($row=mysqli_fetch_assoc($query_run)){
           ?>
           <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
             <div class="features">
               <div class="header mb-3">
-              <?php echo '<center><img src="data:image/jpg;base64,'.base64_encode( $row['brand_logo'] ).'"alt="brand loho" style="width:100px; height:100px;">';?>
+              <?php echo '<center><img src="data:image/jpg;base64,'.base64_encode( $row['brand_logo'] ).'"alt="brand logo" style="width:100px; height:100px;">';?>
               </div>
               <br>
               <br>

@@ -17,7 +17,7 @@ $pass=$_POST['password'];
      $row=mysqli_fetch_assoc($result);
       $count = mysqli_num_rows($result);
       if($count == 1) {
-         
+         $_SESSION['isInfluencerlogin']=true;
         $_SESSION['isloggedin']=true;
          $_SESSION['id']=$row['influencer_id'];
          $_SESSION['username']=$row['Name'];

@@ -9,10 +9,10 @@ include 'header.php';
             <nav aria-label="Breadcrumb">
               <ul class="breadcrumb justify-content-center py-0 bg-transparent">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item active">Influencer</li>
+                <li class="breadcrumb-item active">Brands</li>
               </ul>
             </nav>
-            <h1 class="text-center">Influencer</h1>
+            <h1 class="text-center">Brands</h1>
           </div>
         </div>
       </div>
@@ -61,23 +61,23 @@ include 'header.php';
         $cat4="Food";
         if($value==$cat1)
         {
-          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+          $query = "select * from brand_login LIMIT 12 WHERE category='$$value'";
         }
         else if($value ==$cat2)
         {
-          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+          $query = "select * from brand_login LIMIT 12 WHERE category='$$value'";
         }
         else if($value==$cat3)
         {
-          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+          $query = "select * from brand_login LIMIT 12 WHERE category='$$value'";
         }
         else if($value==$cat4)
         {
-          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+          $query = "select * from brand_login LIMIT 12 WHERE category='$$value'";
         }
         else
         {
-          $query = "select * from login LIMIT 12";
+          $query = "select * from brand_login LIMIT 12";
         }
         $query_run=mysqli_query($conn,$query);
         $check_influencer=mysqli_num_rows($query_run)>0;
@@ -98,11 +98,11 @@ include 'header.php';
           <div class="card-blog">
             <div class="header">
               <div class="post-thumb">
-              <?php echo '<center><img src="data:image/jpg;base64,'.base64_encode( $row['influencer_image'] ).'"alt="influencers image" style="width:300px; height:300px;">';?>
+              <?php echo '<center><img src="data:image/jpg;base64,'.base64_encode( $row['brand_logo'] ).'"alt="brand logo" style="width:300px; height:300px;">';?>
               </div>
             </div>
             <div class="body">
-              <h5 class="post-title"><a href="userprofile.php?id=<?php echo $row['influencer_id']?>" ><?php echo $row['Name']?></a></h5>
+              <h5 class="post-title"><a href="userprofile.php?id=<?php echo $row['brand_id']?>" ><?php echo $row['Name']?></a></h5>
               <div class="post-date"><a href="#"><?php echo $row['category']?></a></div>
             </div>
           </div>
@@ -117,11 +117,11 @@ include 'header.php';
           <li class="page-item disabled">
             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
           </li>
-          <li class="page-item"><a class="page-link" href="influencers.php">1</a></li>
+          <li class="page-item"><a class="page-link" href="brands.php">1</a></li>
           <li class="page-item active" aria-current="page">
-            <a class="page-link" href="influencers.php">2 <span class="sr-only">(current)</span></a>
+            <a class="page-link" href="brands.php">2 <span class="sr-only">(current)</span></a>
           </li>
-          <li class="page-item"><a class="page-link" href="influencers.php">3</a></li>
+          <li class="page-item"><a class="page-link" href="brands.php">3</a></li>
           <li class="page-item">
             <a class="page-link" href="#">Next</a>
           </li>
