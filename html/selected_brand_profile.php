@@ -91,7 +91,8 @@ include 'header.php';
                     <div class="mt-3">
                       <h4><?php echo $row['Name'];?></h4>
                       <p class="text-secondary mb-1"><?php echo $row['category'];?></p>
-                      <button class="btn btn-primary">Connect With Me!</button>
+                      <button class="btn btn-primary">
+                          <a href="contactform.php" class="nav-link" style="color:white">Connect With Me!</a></button>
                     </div>
                   </div>
                 </div>

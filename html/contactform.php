@@ -1,149 +1,121 @@
-<?php
-include 'header.php'
-?>
 <style>
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 
-* {
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-webkit-font-smoothing:antialiased;
-	-moz-font-smoothing:antialiased;
-	-o-font-smoothing:antialiased;
-	font-smoothing:antialiased;
-	text-rendering:optimizeLegibility;
-}
-
-body {
-	font-family:"Open Sans", Helvetica, Arial, sans-serif;
-	font-weight:300;
-	font-size: 12px;
-	line-height:30px;
-	color:#777;
-	background:#8E24AA;
-}
-
-.container {
-	max-width:400px;
-	width:100%;
-	margin:0 auto;
-	position:relative;
-}
-
-#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
-
-#contact {
-	background:#F9F9F9;
-	padding:25px;
-	margin:50px 0;
-}
-
-#contact h3 {
-	color: #F96;
-	display: block;
-	font-size: 30px;
-	font-weight: 400;
-}
-
-#contact h4 {
-	margin:5px 0 15px;
-	display:block;
-	font-size:13px;
-}
-
-fieldset {
-	border: medium none !important;
-	margin: 0 0 10px;
-	min-width: 100%;
-	padding: 0;
-	width: 100%;
-}
-
-#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea {
-	width:100%;
-	border:1px solid #CCC;
-	background:#FFF;
-	margin:0 0 5px;
-	padding:10px;
-}
-
-#contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact input[type="url"]:hover, #contact textarea:hover {
-	-webkit-transition:border-color 0.3s ease-in-out;
-	-moz-transition:border-color 0.3s ease-in-out;
-	transition:border-color 0.3s ease-in-out;
-	border:1px solid #AAA;
-}
-
-#contact textarea {
-	height:100px;
-	max-width:100%;
-  resize:none;
-}
-
-#contact button[type="submit"] {
-	cursor:pointer;
-	width:100%;
-	border:none;
-	background:#0CF;
-	color:#FFF;
-	margin:0 0 5px;
-	padding:10px;
-	font-size:15px;
-}
-
-#contact button[type="submit"]:hover {
-	background:#09C;
-	-webkit-transition:background 0.3s ease-in-out;
-	-moz-transition:background 0.3s ease-in-out;
-	transition:background-color 0.3s ease-in-out;
-}
-
-#contact button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
-
-#contact input:focus, #contact textarea:focus {
-	outline:0;
-	border:1px solid #999;
-}
-::-webkit-input-placeholder {
- color:#888;
-}
-:-moz-placeholder {
- color:#888;
-}
-::-moz-placeholder {
- color:#888;
-}
-:-ms-input-placeholder {
- color:#888;
-}
-
-    </style>
-<div class="container">  
-  <form id="contact" action="" method="post">
-    <h3>Quick Contact</h3>
-    <h4>Contact us today, and get reply with in 24 hours!</h4>
-    <fieldset>
-      <input placeholder="Your name" type="text" tabindex="1" required autofocus>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Your Email Address" type="email" tabindex="2" required>
-    </fieldset>
-    <fieldset>
-      <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
-    </fieldset>
-    <fieldset>
-      <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
-    </fieldset>
-    <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-    </fieldset>
-  </form>
- 
+    body {
+    background-color: #f6f5fc !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
   
-</div>
-<?php
-include 'footer.php'
-?>
+  .contact-form-wrapper {
+    padding: 100px 0;
+  }
+  
+  .contact-form {
+    margin-top: 20px;
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 400px;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+  }
+  
+  .contact-form .form-input,
+  .form-text-area {
+    background-color: #f0f4f5;
+    height: 50px;
+    padding-left: 16px;
+  }
+  
+  .contact-form .form-text-area {
+    background-color: #f0f4f5;
+    height: auto;
+    padding-left: 16px;
+  }
+  
+  .contact-form .form-control::placeholder {
+    color: #aeb4b9;
+    font-weight: 500;
+    opacity: 1;
+  }
+  
+  .contact-form .form-control:-ms-input-placeholder {
+    color: #aeb4b9;
+    font-weight: 500;
+  }
+  
+  .contact-form .form-control::-ms-input-placeholder {
+    color: #aeb4b9;
+    font-weight: 500;
+  }
+  
+  .contact-form .form-control:focus {
+    border-color: #f33fb0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.07), 0 0 8px #f33fb0;
+  }
+  
+  .contact-form .title {
+    color:#6c55f9;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  .contact-form .description {
+    color: #aeb4b9;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .contact-form .submit-button-wrapper {
+    text-align: center;
+  }
+  
+  .contact-form .submit-button-wrapper input {
+    border: none;
+    border-radius: 4px;
+    background-color: #6c7dfb;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+  
+  .contact-form .submit-button-wrapper input:hover {
+    background-color: #d30069;
+  }
+  
+    </style>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   
+        <link rel="stylesheet" href=css/form.css>
+    </head>
+    
+<body>
+    <div>
+    <div class="contact-form-wrapper d-flex justify-content-center">
+      <form action="#" class="contact-form">
+        <h5 class="title">Contact us</h5>
+        
+      
+        <div>
+          <input type="text" class="form-control rounded border-white mb-3 form-input" id="name" placeholder="Name" required>
+        </div>
+        <div>
+          <input type="email" class="form-control rounded border-white mb-3 form-input" placeholder="Email" required>
+        </div>
+        <div>
+          <textarea id="message" class="form-control rounded border-white mb-3 form-text-area" rows="5" cols="30" placeholder="Message" required></textarea>
+        </div>
+        <div class="submit-button-wrapper">
+          <input type="submit" value="Send">
+        </div>
+      </form>
+    </div>
+  </div></body>
+    
+</html>
