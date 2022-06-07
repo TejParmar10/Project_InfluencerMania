@@ -19,9 +19,19 @@ if($_POST['pass']==$_POST['c_pass']){
 }
 $email=$_POST['email'];
 $phone=$_POST['p_no'];
-
-$query= "INSERT into login (Name,email,Phone,Password) values ('$username','$email','$phone','$password')";
-
+        $filename = $_FILES["uploadfile"]["name"];
+        $tempname = $_FILES["uploadfile"]["tmp_name"];   
+        $folder = "Project/seogram/assets/img/influencers/".$filename;
+        $category_names=$_POST["category_names"];
+        $query= "INSERT into login (Name,email,Phone,Password,category,influencer_image) values ('$username','$email','$phone','$password','$category_names','$filename')";
+        if(move_uploaded_file($tempname,$folder))
+        {
+                echo"Image inserted!"; 
+        }
+        else
+        {
+                echo "Image is not inserted!";
+        }
         $result   = mysqli_query($conn, $query);
         if($result){
         	header("Location: login_signup_influencer.html");
@@ -31,6 +41,5 @@ $query= "INSERT into login (Name,email,Phone,Password) values ('$username','$ema
         {
         	echo "Incorrect query"; 
         }
-
 
 ?>

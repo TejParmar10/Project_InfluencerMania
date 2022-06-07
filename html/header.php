@@ -58,7 +58,15 @@ session_start();
             else{
               ?>
               <li class="nav-item">
-              <a class="nav-link" href="influencers.php">Influencers</a>
+              <div class="dropdown">
+                                    <a href="influencers.php" class="nav-link">Influencers</a>
+                                    <!-- <div class="dropdown-content">
+                                        <a href="#">Clothing</a>
+                                        <a href="#">Grooming</a>
+                                        <a href="#">Food</a>
+                                        <a href="#">Tech</a>
+                                    </div> -->
+                            <!-- </div>   -->
             </li>
             <?php
             }
@@ -120,10 +128,14 @@ session_start();
                                 </a>
                                 
                             </li>
+               <li class="nav-items">
+                <a class="nav-link" href="Dashboard.php">Dashboard
+                </a>
+              </li>
             <li class="nav-items">
                 <a class="nav-link" href="logout_influencer.php">Logout
                 </a>
-        </li>
+            </li>
         <?php
             }
             else if($_SESSION['isBrandlogin']==true)

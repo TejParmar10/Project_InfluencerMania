@@ -233,6 +233,7 @@ include 'header.php';
 
         </div>
     </div>
+    
 </html>
 <?php
     include 'footer.php';

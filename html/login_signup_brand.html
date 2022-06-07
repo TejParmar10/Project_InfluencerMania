@@ -255,14 +255,14 @@ footer a {
 <body>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="registration_brand.php" method="post">
+		<form action="registration_brand.php" enctype="multipart/form-data" method="post">
 			<h1>Create Account</h1>
-			
 			<input type="text" placeholder="Name"  name="name"/>
 			<input type="email" placeholder="Email" name="email"/>
 			<input type="password" placeholder="Password" name="pass"/>
 			<input type="password" placeholder="Confirm Password" name="c_pass"/>
-			<label>Select a Brand</label><select name="category_names">
+			<input type="file" name="uploadfile" value=""/>
+			<label>Select a Category</label><select name="category_names">
 				<option>Select Category</option>
 				<option value="Food">Food</option>
 				<option value="Grooming">Grooming</option>

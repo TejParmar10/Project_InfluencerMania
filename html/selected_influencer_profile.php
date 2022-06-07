@@ -65,6 +65,9 @@ include 'header.php';
 .shadow-none {
     box-shadow: none!important;
 } 
+.dashboard{
+  margin-top: 20px;
+}
     </style>
 <div class="container">
     <div class="main-body">
@@ -150,6 +153,55 @@ include 'header.php';
                     </div>
                   </div> -->
                 </div>
+               
+</div>
+<div class="dashboard">
+                <h3>Brands</h3>
+<hr>
+<div class="table-responsive">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Sr.no</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Product</th>
+        <th scope="col">Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Puma</td>
+        <td>Trackpant</td>
+        <td>Project Manager</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>H&M</td>
+        <td>Clothes</td>
+        <td>JS developer</td>
+      </tr>
+      <tr>
+        <!-- <th scope="row">3</th>
+        <td>Larry</td>
+        <td>Bird</td>
+        <td>Back-end developer</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Martin</td>
+        <td>Smith</td>
+        <td>Back-end developer</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Kate</td>
+        <td>Mayers</td>
+        <td>Scrum master</td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
               </div>
 
               <!-- <div class="row gutters-sm">
@@ -213,7 +265,6 @@ include 'header.php';
 
             </div>
           </div>
-
         </div>
     </div>
 </html>
