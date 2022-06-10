@@ -22,6 +22,7 @@ $pass=$_POST['password'];
          $_SESSION['id']=$row['influencer_id'];
          $_SESSION['username']=$row['Name'];
          $_SESSION['category']=$row['category'];
+         $_SESSION['email']=email;
          
          header("location: index.php");
       }else{

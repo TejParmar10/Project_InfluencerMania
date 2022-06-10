@@ -128,10 +128,8 @@ session_start();
                                 </a>
                                 
                             </li>
-               <li class="nav-items">
-                <a class="nav-link" href="Dashboard.php">Dashboard
-                </a>
-              </li>
+                            <li class="nav-item">
+            </li>
             <li class="nav-items">
                 <a class="nav-link" href="logout_influencer.php">Logout
                 </a>
@@ -157,6 +155,13 @@ session_start();
                                 </a>
                                 
                             </li>
+                            <div class="dropdown">
+                                    <a href="dashboard.php" class="nav-link">Dashboard</a>
+                                    <div class="dropdown-content">
+                                        <a href="pie1_instagram_followers.php">Instagram</a>
+                                        <a href="pie2_twitter_followers.php">Twitter</a>
+                                    </div>
+                            </div>  
             <li class="nav-items">
                 <a class="nav-link" href="logout_brand.php">Logout
                 </a>
