@@ -14,7 +14,8 @@
  if(isset($_GET['id'])){
   $id=mysqli_real_escape_string($conn,$_GET['id']);
   $sql="select * from login where influencer_id=$id";
-  $getData = $conn->query($sql);
+  $sql2="select * from login";
+  $getData = $conn->query($sql2);
   $result=mysqli_query($conn,$sql);
   $row=mysqli_fetch_assoc($result);
   mysqli_free_result($result);
@@ -103,7 +104,8 @@ include 'header.php';
                     <div class="mt-3">
                       <h4><?php echo $row['Name'];?></h4>
                       <p class="text-secondary mb-1"><?php echo $row['category'];?></p>
-                      <button class="btn btn-primary">Connect With Me!</button>
+                      <h5 class="post-title"><a href="sendmail.php?id=<?php echo $row['influencer_id']?>"> Connect With me</a></h5>
+              
                     </div>
                   </div>
                 </div>
@@ -171,6 +173,7 @@ include 'header.php';
                 <h3>Brands</h3>
 <hr>
 <div class="table-responsive">
+  <div id="container_pie"></div>
   <!-- <table class="table table-dark">
     <thead>
       <tr>
@@ -199,7 +202,7 @@ include 'header.php';
   </table> -->
 </div>
             <script>
-              	 Highcharts.chart('container_pie1', {
+              Highcharts.chart('container_pie', {
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
@@ -207,7 +210,7 @@ include 'header.php';
             type: 'pie'
         },
         title: {
-            text: 'Influencers Twitter Popularity, 2022'
+            text: 'Influencers Instagram Popularity, 2022'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -228,14 +231,14 @@ include 'header.php';
             }
         },
         series: [{
-            name: 'Popularity',
+            name: ' Influencers',
             colorByPoint: true,
             data: [
                 <?php
                 $data = '';
                 if ($getData->num_rows>0){
                     while ($row = $getData->fetch_object()){
-                        $data.='{ name:"'.$row->Name.'",y:'.$row->twitter_followers.'},';
+                        $data.='{ name:"'.$row->Name.'",y:'.$row->instagram_followers.'},';
                     }
                 }
                 echo $data;

@@ -19,5 +19,4 @@ include "connect.php";
 	$sql="select * from login";
 	$getData = $conn->query($sql);	
 //    }
-include "pie2_twitter_followers";
 ?>

@@ -1,10 +1,17 @@
 <?php
+session_start();
+?>
+<?php
 include 'connect.php';
-$sql="select * from login";
-$result=mysqli_query($conn,$sql);
-$row=mysqli_fetch_assoc($result);
-mysqli_free_result($result);
-mysqli_close($conn);
+if(isset($_GET['id'])){
+    $id=mysqli_real_escape_string($conn,$_GET['id']);
+    $sql="select * from login where influencer_id=$id";
+    $getData = $conn->query($sql);
+    $result=mysqli_query($conn,$sql);
+    $row=mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
+    mysqli_close($conn);
+   }
 ?>
 <?php
 include "header.php";
@@ -27,14 +34,14 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.office365.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = $row['email'];                     //SMTP username
+    $mail->Username   = 'tej.parmar@svkmmumbai.onmicrosoft.com';                     //SMTP username
     $mail->Password   = 'September@2020';                               //SMTP password
     $mail->SMTPSecure = "tls";            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom($_SESSION['email'],$_SESSION['username']);
-    $mail->addAddress('prerak.prem@gmail.com', 'Prerak');     //Add a recipient
+    $mail->setFrom('tej.parmar@svkmmumbai.onmicrosoft.com','Tej');
+    $mail->addAddress($row['email'],$row['Name']);     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -46,7 +53,7 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
+    $mail->Subject = "Hey! This is brand";
     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

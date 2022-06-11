@@ -1,8 +1,5 @@
 <?php
 // session_start();
-// if(isset($_se))
-$queryString = $_SERVER['QUERY_STRING'];
-echo $queryString;
 include 'header.php';
 ?>
     <div class="container">
@@ -12,10 +9,10 @@ include 'header.php';
             <nav aria-label="Breadcrumb">
               <ul class="breadcrumb justify-content-center py-0 bg-transparent">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item active">Influencer</li>
+                <li class="breadcrumb-item active">Influencers</li>
               </ul>
             </nav>
-            <h1 class="text-center">Influencer</h1>
+            <h1 class="text-center">Influencers</h1>
           </div>
         </div>
       </div>
@@ -29,22 +26,27 @@ include 'header.php';
           <form action="" class="form-search-blog">
             <div class="input-group">
               <div class="input-group-prepend">
-              
-                <!-- <select id="categories" class="custom-select bg-light">
+                <select id="categories" class="custom-select bg-light">
                   <option>All Categories</option>
                   <option value="Clothing">Clothing</option>
                   <option value="Grooming">Grooming</option>
                   <option value="Tech">Tech</option>
                   <option value="Food">Food</option>
-                </select> -->
+                </select>
               </div>
               <!-- <input type="text" class="form-control" placeholder="Enter the name of the influencer"> -->
-              <!-- <button type="submit" name="save" class="btn btn-primary">Search</button>
-
+              <button type="submit" name="save" class="btn btn-primary">Search</button>
+              <?php
+              if($_POST['save'] && $_POST['save'] != 0)
+              {
+                 $categories=$_POST['categories'];
+                 console.log($categories);
+              }
+              ?>
             </div>
           </form>
         </div>
-       <div class="col-sm-2 text-sm-right">
+        <!-- <div class="col-sm-2 text-sm-right">
           <button class="btn btn-secondary">Filter <span class="mai-filter"></span></button>
         </div> -->
       </div>
@@ -53,52 +55,31 @@ include 'header.php';
         <?php
         include 'connect.php';
         $results_per_page=9;
-        ?>
-        <form action="./influencers.php"method="post">
-        Select Category:
-                <select name="categories">
-                    <option value="select">All</option>
-                    <option value="Clothing">Clothing</option>
-                  <option value="Grooming">Grooming</option>
-                  <option value="Tech">Tech</option>
-                  <option value="Food">Food</option>
-                </select>
-                <input type="submit" name="button" value="Submit"/></form>
-        <?php
-        $selected_category=$_POST['categories'];
-        echo $selected_category;
-        ?>
-                        <?php header('Location: ./Project/seogram/html/influencer.php'); ?>
-                        if(selectedValue=="Clothing")
-                            {
-                            
-                              console.log(selectedValue);
-                            <?php $query = "select * from login LIMIT 12 WHERE category='Clothing'";
-                            ?>
-                            }
-                            else if(selectedValue=="Grooming")
-                            {
-                            <?php  $query = "select * from login LIMIT 12 WHERE category='Grooming'";?>
-                            }
-                            else if(selectedValue=="Tech")
-                            {
-                              <?php $query = "select * from login LIMIT 12 WHERE category='Tech'";?>
-                            }
-                            else if(selectedValue=="Food")
-                            {
-                              <?php $query = "select * from login LIMIT 12 WHERE category='Food'";?>
-                            }
-                            else
-                            { 
-                              <?php $query = "select * from login LIMIT 12";?>
-                            }
-                        alert("Selected Text: " + selectedText + "\n Value: " + selectedValue);
-                    }
-                  </script>
-        <?php
-        function display() {
-          $query_run=mysqli_query($conn,$query);
-        echo $query;
+        $cat1='Clothing';
+        $cat2="Grooming";
+        $cat3="Tech";
+        $cat4="Food";
+        if($value==$cat1)
+        {
+          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+        }
+        else if($value ==$cat2)
+        {
+          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+        }
+        else if($value==$cat3)
+        {
+          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+        }
+        else if($value==$cat4)
+        {
+          $query = "select * from login LIMIT 12 WHERE category='$$value'";
+        }
+        else
+        {
+          $query = "select * from login LIMIT 12";
+        }
+        $query_run=mysqli_query($conn,$query);
         $check_influencer=mysqli_num_rows($query_run)>0;
         $number_of_result=mysqli_num_rows($query_run);
         $number_of_page=ceil($number_of_result/$results_per_page);
@@ -117,11 +98,11 @@ include 'header.php';
           <div class="card-blog">
             <div class="header">
               <div class="post-thumb">
-              <?php echo '<center><img src="data:image/jpg;base64,'.base64_encode( $row['influencer_image'] ).'"alt="influencers image" style="width:300px; height:300px;">';?>
+              <?php echo '<center><img src="data:image/jpg;base64,'.base64_encode( $row['influencer_image'] ).'"alt="influencer image" style="width:300px; height:300px;">';?>
               </div>
             </div>
             <div class="body">
-              <h5 class="post-title"><a href="userprofile.php?id=<?php echo $row['influencer_id']?>" ><?php echo $row['Name']?></a></h5>
+              <h5 class="post-title"><a href="selected_influencer_profile.php?id=<?php echo $row['influencer_id']?>" ><?php echo $row['Name']?></a></h5>
               <div class="post-date"><a href="#"><?php echo $row['category']?></a></div>
             </div>
           </div>
@@ -129,25 +110,23 @@ include 'header.php';
         <?php
             }
           }
-        }
           ?>
-
       </div>
-      <!-- <nav aria-label="Page Navigation">
+      <nav aria-label="Page Navigation">
         <ul class="pagination justify-content-center">
           <li class="page-item disabled">
             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
           </li>
-          <li class="page-item"><a class="page-link" href="influencers.php">1</a></li>
+          <li class="page-item"><a class="page-link" href="brands.php">1</a></li>
           <li class="page-item active" aria-current="page">
-            <a class="page-link" href="influencers.php">2 <span class="sr-only">(current)</span></a>
+            <a class="page-link" href="brands.php">2 <span class="sr-only">(current)</span></a>
           </li>
-          <li class="page-item"><a class="page-link" href="influencers.php">3</a></li>
+          <li class="page-item"><a class="page-link" href="brands.php">3</a></li>
           <li class="page-item">
             <a class="page-link" href="#">Next</a>
           </li>
         </ul>
-      </nav> -->
+      </nav>
 
     </div>
   </div>
