@@ -26,23 +26,8 @@ include 'header.php';
           <form action="" class="form-search-blog">
             <div class="input-group">
               <div class="input-group-prepend">
-                <select id="categories" class="custom-select bg-light">
-                  <option>All Categories</option>
-                  <option value="Clothing">Clothing</option>
-                  <option value="Grooming">Grooming</option>
-                  <option value="Tech">Tech</option>
-                  <option value="Food">Food</option>
-                </select>
               </div>
               <!-- <input type="text" class="form-control" placeholder="Enter the name of the influencer"> -->
-              <button type="submit" name="save" class="btn btn-primary">Search</button>
-              <?php
-              if($_POST['save'] && $_POST['save'] != 0)
-              {
-                 $categories=$_POST['categories'];
-                 console.log($categories);
-              }
-              ?>
             </div>
           </form>
         </div>
@@ -55,30 +40,7 @@ include 'header.php';
         <?php
         include 'connect.php';
         $results_per_page=9;
-        $cat1='Clothing';
-        $cat2="Grooming";
-        $cat3="Tech";
-        $cat4="Food";
-        if($value==$cat1)
-        {
-          $query = "select * from login LIMIT 12 WHERE category='$$value'";
-        }
-        else if($value ==$cat2)
-        {
-          $query = "select * from login LIMIT 12 WHERE category='$$value'";
-        }
-        else if($value==$cat3)
-        {
-          $query = "select * from login LIMIT 12 WHERE category='$$value'";
-        }
-        else if($value==$cat4)
-        {
-          $query = "select * from login LIMIT 12 WHERE category='$$value'";
-        }
-        else
-        {
-          $query = "select * from login LIMIT 12";
-        }
+          $query = "select * from login";
         $query_run=mysqli_query($conn,$query);
         $check_influencer=mysqli_num_rows($query_run)>0;
         $number_of_result=mysqli_num_rows($query_run);
@@ -112,22 +74,6 @@ include 'header.php';
           }
           ?>
       </div>
-      <nav aria-label="Page Navigation">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="brands.php">1</a></li>
-          <li class="page-item active" aria-current="page">
-            <a class="page-link" href="brands.php">2 <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="page-item"><a class="page-link" href="brands.php">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-      </nav>
-
     </div>
   </div>
 <?php

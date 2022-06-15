@@ -89,7 +89,7 @@ include 'header.php';
           <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item"><a href="influencers.php">Influencers</a></li>
+              <li class="breadcrumb-item"><a href="brands.php">Brands</a></li>
               <li class="breadcrumb-item active" aria-current="page">User Profile</li>
             </ol>
           </nav>
@@ -174,32 +174,6 @@ include 'header.php';
 <hr>
 <div class="table-responsive">
   <div id="container_pie"></div>
-  <!-- <table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Sr.no</th>
-        <th scope="col">Brand</th>
-        <th scope="col">Product</th>
-        <th scope="col">Position</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Puma</td>
-        <td>Trackpant</td>
-        <td>Project Manager</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>H&M</td>
-        <td>Clothes</td>
-        <td>JS developer</td>
-      </tr>
-      <tr>
-      </tr>
-    </tbody>
-  </table> -->
 </div>
             <script>
               Highcharts.chart('container_pie', {

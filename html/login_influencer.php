@@ -21,8 +21,8 @@ $pass=$_POST['password'];
         $_SESSION['isloggedin']=true;
          $_SESSION['id']=$row['influencer_id'];
          $_SESSION['username']=$row['Name'];
-         $_SESSION['category']=$row['category'];
-         $_SESSION['email']=email;
+         $_SESSION['influencer_category']=$row['category'];
+         $_SESSION['email']=$row['email'];
          
          header("location: index.php");
       }else{

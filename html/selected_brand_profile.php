@@ -5,12 +5,14 @@
   $sql="select * from brand_login where brand_id=$id";
   $result=mysqli_query($conn,$sql);
   $row=mysqli_fetch_assoc($result);
+  $category=$row['category'];
   mysqli_free_result($result);
-  mysqli_close($conn);
+  // mysqli_close($conn);
  }?>
  <?php
 include 'header.php'; 
 ?>
+<head>
 <style>
    body{
     margin-top:20px;
@@ -69,6 +71,8 @@ include 'header.php';
   margin-top: 20px;
 }
     </style>
+    </head>
+    <body>
 <div class="container">
     <div class="main-body">
     
@@ -148,126 +152,71 @@ include 'header.php';
                   </div>
                   <hr>
                   
-                  <!-- <div class="row">
-                    <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                    </div>
-                  </div> -->
                 </div>
                
 </div>
 <div class="dashboard">
-                <h3>Influencers</h3>
+                <h3>Top Influencers in <?php echo $_GET['category']?></h3>
 <hr>
-<div class="table-responsive">
-  <table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Sr.no</th>
-        <th scope="col">Influencer</th>
-        <th scope="col">Product</th>
-        <th scope="col">Position</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Jay</td>
-        <td>Trackpant</td>
-        <td>Project Manager</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Karthik</td>
-        <td>Clothes</td>
-        <td>JS developer</td>
-      </tr>
-      <tr>
-        <!-- <th scope="row">3</th>
-        <td>Larry</td>
-        <td>Bird</td>
-        <td>Back-end developer</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>Martin</td>
-        <td>Smith</td>
-        <td>Back-end developer</td>
-      </tr>
-      <tr>
-        <th scope="row">5</th>
-        <td>Kate</td>
-        <td>Mayers</td>
-        <td>Scrum master</td> -->
-      </tr>
-    </tbody>
-  </table>
+<div class="container">   
+  <?php
+  $sql2="select * from login WHERE category='$category'";
+  $getData = $conn->query($sql2);	
+  ?>
+  <div id="container_pie1"></div> 
 </div>
               </div>
-
-              <!-- <div class="row gutters-sm">
-                <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Website Markup</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>One Page</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Mobile Template</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Backend API</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-                <!-- <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Website Markup</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>One Page</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Mobile Template</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Backend API</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-
-
-
             </div>
           </div>
         </div>
     </div>
+    <script>
+	 Highcharts.chart('container_pie1', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Influencers Instagram Popularity, 2022'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },
+        series: [{
+            name: ' Influencers',
+            colorByPoint: true,
+            data: [
+                <?php
+                $data = '';
+                if ($getData->num_rows>0){
+                    while ($row = $getData->fetch_object()){
+                        $data.='{ name:"'.$row->Name.'",y:'.$row->instagram_followers.'},';
+                    }
+                }
+                echo $data;
+                ?>
+            ]
+        }]
+	});
+  </script>
+</body>
 </html>
 <?php
     include 'footer.php';

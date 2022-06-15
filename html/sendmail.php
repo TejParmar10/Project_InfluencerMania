@@ -2,26 +2,30 @@
 session_start();
 ?>
 <?php
+include "header.php";
+?>
+<?php
 include 'connect.php';
 if(isset($_GET['id'])){
     $id=mysqli_real_escape_string($conn,$_GET['id']);
     $sql="select * from login where influencer_id=$id";
+
+    
     $getData = $conn->query($sql);
     $result=mysqli_query($conn,$sql);
     $row=mysqli_fetch_assoc($result);
-    mysqli_free_result($result);
-    mysqli_close($conn);
-   }
-?>
-<?php
-include "header.php";
+    $count=$row['counter'];
+    echo $count;
+    $sql2 = "UPDATE login SET counter = counter + 1 WHERE influencer_id = $id";
+    $result2=mysqli_query($conn,$sql2);
+}
 ?>
 <?php
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\Exceptiooun;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
@@ -59,8 +63,14 @@ try {
 
     $mail->send();
     echo 'Message has been sent';
+?>
+
+<?php
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+?>
+
+<?php
 include "footer.php";
 ?>

@@ -26,6 +26,15 @@ session_start();
 <link rel="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
 <link rel="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<style> .center-block 
+{ display: block;
+	margin-left: auto;
+	margin-right: auto;
+ }</style>
 </head>
 <body>
 
@@ -51,7 +60,14 @@ session_start();
             {
             ?>
             <li class="nav-item">
+              <div class="dropdown">
               <a class="nav-link" href="brands.php">Brands</a>
+              <div class="dropdown-content">
+              <a href="brand_clothing.php">Clothing</a>
+              <a href="brand_grooming.php">Grooming</a>
+              <a href="brand_food.php">Food</a>
+            </div>
+              </div>
             </li>
             <?php
             }
@@ -60,13 +76,12 @@ session_start();
               <li class="nav-item">
               <div class="dropdown">
                                     <a href="influencers.php" class="nav-link">Influencers</a>
-                                    <!-- <div class="dropdown-content">
-                                        <a href="#">Clothing</a>
-                                        <a href="#">Grooming</a>
-                                        <a href="#">Food</a>
-                                        <a href="#">Tech</a>
-                                    </div> -->
-                            <!-- </div>   -->
+                                    <div class="dropdown-content">
+                                        <a href="influencer_clothing.php">Clothing</a>
+                                        <a href="influencer_grooming.php">Grooming</a>
+                                        <a href="influencer_food.php">Food</a>
+                                    </div>
+                             </div>  
             </li>
             <?php
             }
@@ -90,7 +105,7 @@ session_start();
             {
               ?>
              <li class="nav-item">
-              <a class="nav-link" href="selected_brand_profile.php?id=<?php echo $_SESSION['selected_brand_id']?>">My Profile</a>
+              <a class="nav-link" href="selected_brand_profile.php?id=<?php echo $_SESSION['selected_brand_id']?>&category=<?php echo $row['category']?>">My Profile</a>
             </li>
             <?php
             }
@@ -130,6 +145,9 @@ session_start();
                             </li>
                             <li class="nav-item">
             </li>
+            <li class="nav-item">
+                               <a class="nav-link" href="Dashboard.php?">Dashboard</a>
+                              </li>
             <li class="nav-items">
                 <a class="nav-link" href="logout_influencer.php">Logout
                 </a>
@@ -155,13 +173,6 @@ session_start();
                                 </a>
                                 
                             </li>
-                            <!-- <div class="dropdown">
-                                    <a href="dashboard.php" class="nav-link">Dashboard</a>
-                                    <div class="dropdown-content">
-                                        <a href="pie1_instagram_followers.php">Instagram</a>
-                                        <a href="pie2_twitter_followers.php">Twitter</a>
-                                    </div>
-                            </div>   -->
                             <li class="nav-item">
                                <a class="nav-link" href="Dashboard.php?">Dashboard</a>
                               </li>

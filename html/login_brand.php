@@ -22,6 +22,7 @@ $pass=$_POST['password'];
         // $_SESSION['isloggedin']=true;
         $_SESSION['brand_username']=$row['Name'];
         $_SESSION['selected_brand_id']=$row['brand_id'];
+        $_SESSION['brand_category']=$row['category'];
         //  $_SESSION['username_brand']=$row['name'];
          header("location: index.php");
       }else{
