@@ -5,7 +5,7 @@
   $sql="select * from brand_login where brand_id=$id";
   $result=mysqli_query($conn,$sql);
   $row=mysqli_fetch_assoc($result);
-  $category=$row['category'];
+  $category_brand=$row['category'];
   mysqli_free_result($result);
   // mysqli_close($conn);
  }?>
@@ -156,11 +156,11 @@ include 'header.php';
                
 </div>
 <div class="dashboard">
-                <h3>Top Influencers in <?php echo $_GET['category']?></h3>
+                <h3>Top Influencers in <?php echo $category_brand?></h3>
 <hr>
 <div class="container">   
   <?php
-  $sql2="select * from login WHERE category='$category'";
+  $sql2="select * from login WHERE category='$category_brand'";
   $getData = $conn->query($sql2);	
   ?>
   <div id="container_pie1"></div> 

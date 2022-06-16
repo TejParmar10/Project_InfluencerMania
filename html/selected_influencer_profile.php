@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <head>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -14,12 +17,13 @@
  if(isset($_GET['id'])){
   $id=mysqli_real_escape_string($conn,$_GET['id']);
   $sql="select * from login where influencer_id=$id";
-  $sql2="select * from login";
+  $sql2="select * from login ";
   $getData = $conn->query($sql2);
   $result=mysqli_query($conn,$sql);
   $row=mysqli_fetch_assoc($result);
   mysqli_free_result($result);
   mysqli_close($conn);
+  $brand_name=$_SESSION['brand_username'];
  }?>
  <?php
 include 'header.php'; 
@@ -104,7 +108,7 @@ include 'header.php';
                     <div class="mt-3">
                       <h4><?php echo $row['Name'];?></h4>
                       <p class="text-secondary mb-1"><?php echo $row['category'];?></p>
-                      <h5 class="post-title"><a href="sendmail.php?id=<?php echo $row['influencer_id']?>"> Connect With me</a></h5>
+                      <h5 class="post-title"><a href="sendmail.php?id=<?php echo $row['influencer_id']?>&brand_name=<?php echo $brand_name?>"> Connect With me</a></h5>
               
                     </div>
                   </div>
@@ -160,6 +164,15 @@ include 'header.php';
                     </div>
                   </div>
                   <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">No.of Brands Connected</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                     <?php echo $row['counter'];?>
+                    </div>
+                  </div>
+                  <hr>
                   
                   <!-- <div class="row">
                     <div class="col-sm-12">
@@ -170,58 +183,12 @@ include 'header.php';
                
 </div>
 <div class="dashboard">
-                <h3>Brands</h3>
+                <h3>Brands Connected</h3>
 <hr>
-<div class="table-responsive">
+<!-- <div class="table-responsive">
   <div id="container_pie"></div>
-</div>
-            <script>
-              Highcharts.chart('container_pie', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Influencers Instagram Popularity, 2022'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
-            }
-        },
-        series: [{
-            name: ' Influencers',
-            colorByPoint: true,
-            data: [
-                <?php
-                $data = '';
-                if ($getData->num_rows>0){
-                    while ($row = $getData->fetch_object()){
-                        $data.='{ name:"'.$row->Name.'",y:'.$row->instagram_followers.'},';
-                    }
-                }
-                echo $data;
-                ?>
-            ]
-        }]
-	});
-            </script>
-              </div>
+</div> -->
+           </div>
             </div>
           </div>
         </div>

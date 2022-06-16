@@ -9,13 +9,13 @@ include 'connect.php';
 if(isset($_GET['id'])){
     $id=mysqli_real_escape_string($conn,$_GET['id']);
     $sql="select * from login where influencer_id=$id";
-
-    
+    $brand_name=$_GET['brand_name']; 
     $getData = $conn->query($sql);
     $result=mysqli_query($conn,$sql);
     $row=mysqli_fetch_assoc($result);
     $count=$row['counter'];
-    echo $count;
+    $_SESSSION['brand_req']=true;
+    // echo $count;
     $sql2 = "UPDATE login SET counter = counter + 1 WHERE influencer_id = $id";
     $result2=mysqli_query($conn,$sql2);
 }
@@ -34,7 +34,7 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.office365.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -62,15 +62,14 @@ try {
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Message has been sent';
 ?>
+<h1>Hey!This is <?php echo $brand_name?> and now we are connected to <?php echo $row['Name']?>
 
 <?php
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 ?>
-
 <?php
 include "footer.php";
 ?>

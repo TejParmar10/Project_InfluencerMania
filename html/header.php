@@ -105,7 +105,7 @@ session_start();
             {
               ?>
              <li class="nav-item">
-              <a class="nav-link" href="selected_brand_profile.php?id=<?php echo $_SESSION['selected_brand_id']?>&category=<?php echo $row['category']?>">My Profile</a>
+              <a class="nav-link" href="selected_brand_profile.php?id=<?php echo $_SESSION['selected_brand_id']?>&category=<?php echo $category_brand?>">My Profile</a>
             </li>
             <?php
             }

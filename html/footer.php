@@ -29,15 +29,6 @@
           <a href="#" class="footer-link">+00 1122 3344 5566</a>
           <a href="#" class="footer-link">influencermania.com</a>
         </div>
-        <div class="col-lg-3 py-3">
-          <h5>Newsletter</h5>
-          <p>Get updates, news or events on your mail.</p>
-          <form action="#">
-            <input type="text" class="form-control" placeholder="Enter your email..">
-            <button type="submit" class="btn btn-success btn-block mt-2">Subscribe</button>
-          </form>
-        </div>
-      </div>
 
       <p class="text-center" id="copyright">Website Created By InfluencerMania Team <a href="https://macodeid.com/" target="_blank"></a></p>
     </div>
