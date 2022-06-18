@@ -20,3 +20,4 @@ include "connect.php";
 	$getData = $conn->query($sql);	
 //    }
 ?>
+	

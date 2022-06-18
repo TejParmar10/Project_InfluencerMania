@@ -17,7 +17,7 @@ session_start();
  if(isset($_GET['id'])){
   $id=mysqli_real_escape_string($conn,$_GET['id']);
   $sql="select * from login where influencer_id=$id";
-  $sql2="select * from login ";
+  $sql2="select * from login WHERE CONVERT(influencer_image,BINARY)";
   $getData = $conn->query($sql2);
   $result=mysqli_query($conn,$sql);
   $row=mysqli_fetch_assoc($result);

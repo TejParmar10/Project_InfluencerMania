@@ -126,38 +126,87 @@ include 'header.php';
             }
         }
                 ?>
+                <!-- All Influencers -->
         </div>
-  
-        <!-- <div class="col-lg-4 py-3 wow fadeInUp">
-          <div class="card-blog">
-            <div class="header">
-              <div class="post-thumb">
-                <img src="../assets/img/blog/blog-2.jpg" alt="">
-              </div>
-            </div>
-            <div class="body">
-              <h5 class="post-title"><a href="#">Source of Content Inspiration</a></h5>
-              <div class="post-date">Posted on <a href="#">27 Jan 2020</a></div>
-            </div>
-          </div>
+        <div class="Influencer">
+          <h1>All Influencers</h1>
+  <table class="table">
+  <?php
+        include 'connect.php';
+        $results_per_page=9;
+          $query = "select * from login";
+        $query_run=mysqli_query($conn,$query);
+        $check_influencer=mysqli_num_rows($query_run)>0;
+        $number_of_result=mysqli_num_rows($query_run);
+  ?>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Category</th>
+      <th scope="col">Instagram Followers</th>
+      <th scope="col">Twitter Followers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+  if($check_influencer)
+        {
+            while($row=mysqli_fetch_assoc($query_run)){
+    ?>
+    <tr>
+      <th scope="row"><?php echo $row['Name']?></th>
+      <td><?php echo $row['email']?></td>
+      <td><?php echo $row['category']?></td>
+      <td><?php echo $row['instagram_followers']?></td>
+      <td><?php echo $row['twitter_followers']?></td>
+      <?php
+            }
+          }
+          ?>
+    </tr>
+  </tbody>
+</table>
         </div>
-
-        <div class="col-lg-4 py-3 wow fadeInUp">
-          <div class="card-blog">
-            <div class="header">
-              <div class="post-thumb">
-                <img src="../assets/img/blog/blog-3.jpg" alt="">
-              </div>
-            </div>
-            <div class="body">
-              <h5 class="post-title"><a href="#">Source of Content Inspiration</a></h5>
-              <div class="post-date">Posted on <a href="#">27 Jan 2020</a></div>
-            </div>
-          </div> -->
-
-        <!-- <div class="col-12 mt-4 text-center wow fadeInUp">
-          <a href="influencers.php" class="btn btn-primary">View More</a>
-        </div> -->
+        <!-- All Brands -->
+        <div class="Brand">
+          <h1>All Brands</h1>
+  <table class="table">
+  <?php
+        include 'connect.php';
+        $results_per_page=9;
+          $query = "select * from brand_login";
+        $query_run=mysqli_query($conn,$query);
+        $check_influencer=mysqli_num_rows($query_run)>0;
+        $number_of_result=mysqli_num_rows($query_run);
+  ?>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Category</th>
+      <th scope="col">Sales(in Billion)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+  if($check_influencer)
+        {
+            while($row=mysqli_fetch_assoc($query_run)){
+    ?>
+    <tr>
+      <th scope="row"><?php echo $row['Name']?></th>
+      <td><?php echo $row['email']?></td>
+      <td><?php echo $row['category']?></td>
+      <td><?php echo $row['sales']?></td>
+      <?php
+            }
+          }
+          ?>
+    </tr>
+  </tbody>
+</table>
+        </div>
       </div>
     </div>
   </div>
