@@ -95,8 +95,8 @@ include 'header.php';
                     <div class="mt-3">
                       <h4><?php echo $row['Name'];?></h4>
                       <p class="text-secondary mb-1"><?php echo $row['category'];?></p>
-                      <button class="btn btn-primary">
-                          <a href="contactform.php" class="nav-link" style="color:white">Connect With Me!</a></button>
+                      <!-- <button class="btn btn-primary">
+                          <a href="contactform.php" class="nav-link" style="color:white">Connect With Me!</a></button> -->
                     </div>
                   </div>
                 </div>
@@ -171,50 +171,94 @@ include 'header.php';
         </div>
     </div>
     <script>
-	 Highcharts.chart('container_pie1', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Influencers Instagram Popularity, 2022'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
+	//  Highcharts.chart('container_pie1', {
+  //       chart: {
+  //           plotBackgroundColor: null,
+  //           plotBorderWidth: null,
+  //           plotShadow: false,
+  //           type: 'pie'
+  //       },
+  //       title: {
+  //           text: 'Influencers Instagram Popularity, 2022'
+  //       },
+  //       tooltip: {
+  //           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  //       },
+  //       accessibility: {
+  //           point: {
+  //               valueSuffix: '%'
+  //           }
+  //       },
+  //       plotOptions: {
+  //           pie: {
+  //               allowPointSelect: true,
+  //               cursor: 'pointer',
+  //               dataLabels: {
+  //                   enabled: false
+  //               },
+  //               showInLegend: true
+  //           }
+  //       },
+  //       series: [{
+  //           name: ' Influencers',
+  //           colorByPoint: true,
+  //           data: [
+  //               <?php
+  //               $data = '';
+  //               if ($getData->num_rows>0){
+  //                   while ($row = $getData->fetch_object()){
+  //                       $data.='{ name:"'.$row->Name.'",y:'.$row->instagram_followers.'},';
+  //                   }
+  //               }
+  //               echo $data;
+  //               ?>
+  //           ]
+  //       }]
+	// });
+  Highcharts.chart('container_pie1', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Influencer Instagram Popularity, 2022'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                connectorColor: 'silver'
             }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
-            }
-        },
-        series: [{
-            name: ' Influencers',
-            colorByPoint: true,
-            data: [
-                <?php
-                $data = '';
-                if ($getData->num_rows>0){
+        }
+    },
+    series: [{
+        name: 'Followers',
+        data: [
+            <?php
+            $data='';
+            if ($getData->num_rows>0){
                     while ($row = $getData->fetch_object()){
                         $data.='{ name:"'.$row->Name.'",y:'.$row->instagram_followers.'},';
                     }
                 }
                 echo $data;
                 ?>
-            ]
-        }]
-	});
+        ]
+    }]
+});
   </script>
 </body>
 </html>

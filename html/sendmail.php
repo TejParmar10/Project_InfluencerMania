@@ -58,12 +58,12 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = "Hey! This is brand";
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->Body    = 'Click on this link for the confirmation<a href="http://localhost/Project/seogram/html/index.php">Click Me!For verification</a>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
 ?>
-<h1>Hey!This is <?php echo $brand_name?> and now we are connected to <?php echo $row['Name']?>
+<h1>Hey!This is <?php echo $brand_name?> and we have send a confirmation link to <?php echo $row['Name']?> please check your mailbox</h1>
 
 <?php
 } catch (Exception $e) {
